@@ -1,4 +1,9 @@
 2830. Maximize the Profit as the Salesman My SubmissionsBack to Contest
+User Accepted: 4257
+User Tried: 7953
+Total Accepted: 4525
+Total Submissions: 19057
+Difficulty: Medium
 You are given an integer n representing the number of houses on a number line, numbered from 0 to n - 1.
 
 Additionally, you are given a 2D integer array offers where offers[i] = [starti, endi, goldi], indicating that ith buyer wants to buy all the houses from starti to endi for goldi amount of gold.
