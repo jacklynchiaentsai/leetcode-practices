@@ -47,7 +47,6 @@ public:
                     int mask = submask | check_bit;
                     // calculating sum: adding the 1 digit difference
                     sum_minsets[mask] = sum_minsets[submask] + transaction_set[N-j-1];
-                    check_bit <<= 1;
 
                     // don't have to iterate through all submasks, just update whenever encounter new submask
                     if (sum_minsets[mask] == 0){
@@ -56,6 +55,7 @@ public:
                         num_minsets[mask] = max(num_minsets[mask], num_minsets[submask]);
                     }
                 }
+                check_bit <<= 1;
             }
 
         }
