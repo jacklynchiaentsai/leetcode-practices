@@ -1,3 +1,5 @@
+// time: O(n) assuming length of cpdomains[i] is fixed, space: O(n)
+// use upon seeing character as way to split strings in c++
 class Solution {
 public:
     vector<string> subdomainVisits(vector<string>& cpdomains) {
