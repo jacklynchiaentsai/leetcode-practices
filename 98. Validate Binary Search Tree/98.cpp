@@ -9,7 +9,7 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-// top down in order traversal
+// top down DFS
 // N = number of nodes time: O(N) 
 // space: O(N) worst case memory from recursion stack when binary search tree is completely skewed
 class Solution {
