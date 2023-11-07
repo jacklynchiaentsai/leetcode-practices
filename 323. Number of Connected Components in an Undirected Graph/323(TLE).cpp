@@ -4,6 +4,8 @@ class Solution {
 public:
 
     void dfs(int curNode, vector<bool>& visited, vector<vector<int>> adj){
+        visited[curNode] = true;
+        
         for(int neighbor: adj[curNode]){
             if (!visited[neighbor]){
                 visited[neighbor] = true;
