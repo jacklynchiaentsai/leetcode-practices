@@ -1,4 +1,4 @@
-// top down dynamic programming
+// top down dynamic programming: working form s.length - 1 all the way down
 // n: length of s, m: dictionary length, k: average length of words in wordDict
 // time: O(n*m*k) -> k is due to substr function
 // space: O(n) for memo
