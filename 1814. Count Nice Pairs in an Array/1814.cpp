@@ -1,3 +1,4 @@
+// time: O(n) space: O(n)
 // dependant on two nums: x + rev(y) = rev(x) + y
 // rearrange: x - rev(x) = y - rev(y)
 class Solution {
