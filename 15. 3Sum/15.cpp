@@ -14,6 +14,8 @@ public:
         for(int i =0; i < nums.size(); i++){
             if (nums[i] > 0){
                 break;
+            } else if (i!= 0 && nums[i] == nums[i-1]){
+                continue; // avoid evaluating duplicate values
             }
 
             int start = i+1, end = nums.size() - 1;
