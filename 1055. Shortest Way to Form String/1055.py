@@ -1,6 +1,6 @@
 """
 source length = m, target length = n
-time: O(mn)
+time: O(m*n^2)
 space: O(mn)
 """
 class Solution:
