@@ -1,3 +1,8 @@
+"""
+math + sorted list (self balancing BST)
+time: O(nlog(n))
+space: O(n)
+"""
 from sortedcontainers import SortedList
 class Solution:
     def countRangeSum(self, nums: List[int], lower: int, upper: int) -> int:
