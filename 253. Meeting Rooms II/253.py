@@ -1,24 +1,14 @@
 from functools import cmp_to_key
 import heapq
 """
-custom sorting with minHeap
+sorting with minHeap
 time: O(nlogn)
 space: O(n)
 """
 class Solution:
-    def compare(self, interval1, interval2):
-        if interval1[0] < interval2[0]:
-            return -1
-        elif interval1[0] == interval2[0]:
-            if interval1[1] <= interval2[1]:
-                return -1
-            else:
-                return 1
-        else:
-            return 1
 
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
-        intervals.sort(key=cmp_to_key(self.compare))
+        intervals.sort()
         minHeap = [0]
         heapq.heapify(minHeap)
 
@@ -35,7 +25,16 @@ class Solution:
         return len(minHeap)
 
 """
-sort
-prioritize room that has earlier end time -> minHeap
+sorting to process time intervals sequentially; start -> end
+preserve a minHeap that gives me the room that is earliest available
+minHeap = [earliest available times for each room]
+-> initialize minHeap = [0]
+for interval in intervals
+    if start > minHeap[0]: # can use room
+        minHeap.pop()
+        minHeap.push(end) # update room available time
+    else: # need to create a new room
+        minHeap,push(end)
 
+return len(minHeap)
 """      
