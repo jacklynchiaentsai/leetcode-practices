@@ -10,7 +10,7 @@ class Node:
         self.bottomRight = bottomRight
 """
 """
-recursion
+top down recursion
 time: O(n^2* logn)
 space: O(logn) -> recursive stack
 """
