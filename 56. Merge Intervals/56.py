@@ -1,45 +1,61 @@
 """
-customized sorting
+overlapping intervals (sorting)
 time: O(nlogn)
-space: O(n)
+space: O(1)
 """
-from functools import cmp_to_key
 class Solution:
-    def cmp(self, interval1, interval2):
-        if interval1[0] < interval2[0]:
-            return -1
-        elif interval1[0] > interval2[0]:
-            return 1
-        else:
-            if interval1[1] < interval2[1]:
-                return -1
-            else:
-                return 1
-
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        output = []
-        sorted_intervals = sorted(intervals, key = cmp_to_key(self.cmp))
-        for interval in sorted_intervals:
-            if len(output) == 0:
-                output.append(interval)
+        intervals.sort()
+
+        return_list = []
+        start = intervals[0][0]
+        end = intervals[0][1]
+
+        for i in range(1, len(intervals)):
+            curstart = intervals[i][0]
+            curend = intervals[i][1]
+
+            if curstart <= end:
+                end = max(end, curend)
             else:
-                prevstart = output[-1][0]
-                prevend = output[-1][1]
-                start = interval[0]
-                end = interval[1]
-                if end >= prevend:
-                    if start > prevend:
-                        output.append(interval)
-                    else:
-                        output[-1][1] = end
-        
-        return output
+                return_list.append([start, end])
+                start = curstart
+                end = curend
+
+        return_list.append([start, end])
+
+        return return_list
+
 """
-intervals = [[1,3],[2,6],[8,10],[15,18]]
-sorting by starting point and then by end point
-1)next interval eats previous interval up
-2) next interval partially overlapping but having a bit left or completely overlapping
-3) non overlapping
-[[1,3], [4,5], [4,6], ]
+sort intervals by start -> end
+curstart
+curend
+
+nextstart
+nextend
+
+if nextstart <= curend -> overlapping
+else -> non-overlapping
+
+
+sort intervals by start -> end
+return_list = []
+
+start = intervals[0][0]
+end = intervals[0][1]
+
+iterate i from 1 to len(intervals) - 1:
+    curstart, curend
+
+    if curstart <= end -> overlapping{
+        end = max(end, curend)
+    }
+    else -> non-overlapping{
+        add [start,end] to return_list
+        start, end = curstart, curend
+    }
+
+add [start,end] to return_list
+
 
 """
