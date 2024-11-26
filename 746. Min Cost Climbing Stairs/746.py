@@ -1,3 +1,8 @@
+"""
+fibnacci pattern dp
+time: O(n)
+space: O(n)
+"""
 class Solution:
     def minCostClimbingStairs(self, cost: List[int]) -> int:
         n = len(cost)
