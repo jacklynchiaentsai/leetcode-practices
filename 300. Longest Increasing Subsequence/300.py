@@ -1,6 +1,7 @@
 """
 dynamic programming
-
+time: O(n^2)
+space: O(n)
 """
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
